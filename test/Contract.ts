@@ -3,19 +3,21 @@ import { expect } from "chai";
 import hre from "hardhat";
 import { isAddress } from "viem";
 
-describe("Contract", function () {
+describe("RandomApp", function () {
   async function fixture() {
     const [owner, otherAccount] = await hre.viem.getWalletClients();
-    const contract = await hre.viem.deployContract("Contract", []);
+    const randomapp = await hre.viem.deployContract("RandomApp", [
+      "0x3157497b82eC91A234f11Ee44553D2a303e8d59e",
+    ]);
     const publicClient = await hre.viem.getPublicClient();
-    return { contract, owner, otherAccount, publicClient };
+    return { randomapp, owner, otherAccount, publicClient };
   }
 
   describe("", function () {
     it("", async function () {
-      const { contract } = await loadFixture(fixture);
+      const { randomapp } = await loadFixture(fixture);
 
-      expect(isAddress(contract.address));
+      expect(isAddress(randomapp.address));
     });
   });
 });

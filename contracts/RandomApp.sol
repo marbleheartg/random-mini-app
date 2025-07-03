@@ -5,10 +5,10 @@ pragma solidity ^0.8.27;
 import { ERC1155 } from "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 
-contract ContractName is ERC1155, Ownable {
+contract RandomApp is ERC1155, Ownable {
     uint256 public constant PRICE = 0.00009 ether;
 
-    constructor(address initialOwner) ERC1155("ipfs://[CID]/{id}.json") Ownable(initialOwner) {}
+    constructor(address initialOwner) ERC1155("ipfs://bafybeih7ht4erytz652leowkw25k5uksdevmo6jhp4azygdqnwi5mbkraa/{id}.json") Ownable(initialOwner) {}
 
     function mint(uint256 id) public payable {
         require(msg.value >= PRICE, "Not enough ETH");
