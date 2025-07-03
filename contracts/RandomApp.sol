@@ -11,7 +11,7 @@ contract RandomApp is ERC1155, Ownable {
     constructor(address initialOwner) ERC1155("ipfs://bafybeih7ht4erytz652leowkw25k5uksdevmo6jhp4azygdqnwi5mbkraa/{id}.json") Ownable(initialOwner) {}
 
     function mint(uint256 id) public payable {
-        require(msg.value >= PRICE, "Not enough ETH");
+        require(msg.value >= PRICE, "Not enough ETH...");
         _mint(msg.sender, id, 1, "");
     }
 
