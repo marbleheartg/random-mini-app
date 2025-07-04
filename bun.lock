@@ -8,10 +8,13 @@
         "@farcaster/frame-node": "^0.1.2",
         "@farcaster/frame-sdk": "^0.1.2",
         "@farcaster/frame-wagmi-connector": "^1.0.0",
+        "@farcaster/miniapp-wagmi-connector": "^1.0.0",
         "@farcaster/quick-auth": "^0.0.6",
         "@tanstack/react-query": "^5.81.5",
+        "@types/culori": "^4.0.0",
         "axios": "^1.10.0",
         "clsx": "^2.1.1",
+        "culori": "^4.0.2",
         "mongodb": "^6.17.0",
         "next": "15.3.3",
         "react": "^19.1.0",
@@ -19,7 +22,7 @@
         "react-router": "^7.6.3",
         "viem": "^2.31.6",
         "wagmi": "^2.15.6",
-        "zod": "^3.25.68",
+        "zod": "^3.25.71",
         "zustand": "^5.0.6",
       },
       "devDependencies": {
@@ -68,6 +71,8 @@
     "@farcaster/miniapp-node": ["@farcaster/miniapp-node@0.1.2", "", { "dependencies": { "@farcaster/miniapp-core": "0.3.2", "@noble/curves": "^1.7.0", "ox": "^0.4.4", "zod": "^3.24.1" } }, "sha512-nBq/vG4BaQfzv0gInbyowjMdNU/xenbxGEozrAk6+R0z4HM/5wrV+BMCy4JZ7FYww9CNmKPFJqzqDEJpq/iLbQ=="],
 
     "@farcaster/miniapp-sdk": ["@farcaster/miniapp-sdk@0.1.2", "", { "dependencies": { "@farcaster/miniapp-core": "0.3.2", "@farcaster/quick-auth": "^0.0.6", "comlink": "^4.4.2", "eventemitter3": "^5.0.1", "ox": "^0.4.4" } }, "sha512-sBAUqVdzhTUaz7aNNvQh1Jc35j5NOVPlpN19eSC+yh/Ja0hu4xPdoOuV/IgLX5R3prSRSaMqB3qVfhy5TKz87g=="],
+
+    "@farcaster/miniapp-wagmi-connector": ["@farcaster/miniapp-wagmi-connector@1.0.0", "", { "peerDependencies": { "@farcaster/miniapp-sdk": "^0.1.0", "@wagmi/core": "^2.14.1", "viem": "^2.21.55" } }, "sha512-vMRZbekUUctnAUvBFhNoEsJlujRRdxop94fDy5LrKiRR9ax0wtp8gCvLYO+LpaP2PtGs0HFpRwlHNDJWvBR8bg=="],
 
     "@farcaster/quick-auth": ["@farcaster/quick-auth@0.0.6", "", { "dependencies": { "jose": "^5.2.3", "zod": "^3.25.1" }, "peerDependencies": { "typescript": "5.8.3" } }, "sha512-tiZndhpfDtEhaKlkmS5cVDuS+A/tafqZT3y9I44rC69m3beJok6e8dIH2JhxVy3EvOWTyTBnrmNn6GOOh+qK6A=="],
 
@@ -263,6 +268,8 @@
 
     "@types/connect": ["@types/connect@3.4.38", "", { "dependencies": { "@types/node": "*" } }, "sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug=="],
 
+    "@types/culori": ["@types/culori@4.0.0", "", {}, "sha512-aFljQwjb++sl6TAyEXeHTiK/fk9epZOQ+nMmadjnAvzZFIvNoQ0x8XQYfcOaRTBwmDUPUlghhZCJ66MTcqQAsg=="],
+
     "@types/debug": ["@types/debug@4.1.12", "", { "dependencies": { "@types/ms": "*" } }, "sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ=="],
 
     "@types/ms": ["@types/ms@2.1.0", "", {}, "sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA=="],
@@ -424,6 +431,8 @@
     "crossws": ["crossws@0.3.5", "", { "dependencies": { "uncrypto": "^0.1.3" } }, "sha512-ojKiDvcmByhwa8YYqbQI/hg7MEU0NC03+pSdEq4ZUnZR9xXpwk7E43SMNGkn+JxJGPFtNvQ48+vV2p+P1ml5PA=="],
 
     "csstype": ["csstype@3.1.3", "", {}, "sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw=="],
+
+    "culori": ["culori@4.0.2", "", {}, "sha512-1+BhOB8ahCn4O0cep0Sh2l9KCOfOdY+BXJnKMHFFzDEouSr/el18QwXEMRlOj9UY5nCeA8UN3a/82rUWRBeyBw=="],
 
     "date-fns": ["date-fns@2.30.0", "", { "dependencies": { "@babel/runtime": "^7.21.0" } }, "sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw=="],
 
@@ -875,7 +884,7 @@
 
     "yargs-parser": ["yargs-parser@18.1.3", "", { "dependencies": { "camelcase": "^5.0.0", "decamelize": "^1.2.0" } }, "sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ=="],
 
-    "zod": ["zod@3.25.69", "", {}, "sha512-cjUx+boz8dfYGssYKLGNTF5VUF6NETpcZCDTN3knhUUXQTAAvErzRhV3pgeCZm2YsL4HOwtEHPonlsshPu2I0A=="],
+    "zod": ["zod@3.25.72", "", {}, "sha512-Cl+fe4dNL4XumOBNBsr0lHfA80PQiZXHI4xEMTEr8gt6aGz92t3lBA32e71j9+JeF/VAYvdfBnuwJs+BMx/BrA=="],
 
     "zustand": ["zustand@5.0.6", "", { "peerDependencies": { "@types/react": ">=18.0.0", "immer": ">=9.0.6", "react": ">=18.0.0", "use-sync-external-store": ">=1.2.0" }, "optionalPeers": ["@types/react", "immer", "react", "use-sync-external-store"] }, "sha512-ihAqNeUVhe0MAD+X8M5UzqyZ9k3FFZLBTtqo6JLPwV53cbRB/mJwBI0PxcIgqhBBHlEs8G45OTDTMq3gNcLq3A=="],
 

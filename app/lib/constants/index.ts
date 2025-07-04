@@ -1,13 +1,12 @@
-const PROJECT_TITLE = "PROJECT_TITLE"
+const PROJECT_TITLE = "random"
 
-const PROJECT_DESCRIPTION = "PROJECT_DESCRIPTION"
+const PROJECT_DESCRIPTION = "discover farcaster mini apps"
 
 const MINIAPP = {
   version: "next",
-  imageUrl: `https://${process.env.NEXT_PUBLIC_HOST}/images/og/cast/image.jpg`,
-  aspectRatio: "3:2",
+  imageUrl: `https://${process.env.NEXT_PUBLIC_HOST}/images/og/cast/image.png`,
   button: {
-    title: "TITLE",
+    title: "open",
     action: {
       type: "launch_frame",
       url: `https://${process.env.NEXT_PUBLIC_HOST}`,
@@ -18,4 +17,6 @@ const MINIAPP = {
   },
 }
 
-export { MINIAPP, PROJECT_DESCRIPTION, PROJECT_TITLE }
+const CA = "0x10494bbc4a505dd01b5795de13595415cc59c24b"
+
+export { CA, MINIAPP, PROJECT_DESCRIPTION, PROJECT_TITLE }

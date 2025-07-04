@@ -1,12 +1,11 @@
-import { Inter } from "next/font/google"
+import { Fira_Mono } from "next/font/google"
 import { ReactNode } from "react"
 import "./globals.css"
 import { MINIAPP, PROJECT_DESCRIPTION, PROJECT_TITLE } from "./lib/constants"
-import ImagesPreload from "./lib/imagesPreload"
 
-const inter = Inter({
-  variable: "--inter",
-  weight: "variable",
+const firamono = Fira_Mono({
+  variable: "--firamono",
+  weight: "500",
   subsets: ["latin"],
 })
 
@@ -20,13 +19,13 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://auth.farcaster.xyz" />
         <link rel="icon" type="image/svg+xml" href="/images/global/logo.svg" />
-        <meta name="fc:miniapp" content={JSON.stringify(MINIAPP)} />
+        <meta name="fc:frame" content={JSON.stringify(MINIAPP)} />
         <meta name="description" content={PROJECT_DESCRIPTION} />
         <title>{PROJECT_TITLE}</title>
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${firamono.variable} antialiased`}>
         {children}
-        <ImagesPreload />
+        {/* <ImagesPreload /> */}
       </body>
     </html>
   )

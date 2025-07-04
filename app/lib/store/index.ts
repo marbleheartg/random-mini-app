@@ -1,5 +1,5 @@
-import { ClientContext, UserContext } from "@farcaster/frame-core/dist/context"
 import { MiniAppHostCapability } from "@farcaster/frame-node"
+import { ClientContext, UserContext } from "@farcaster/miniapp-core/dist/context"
 import { create } from "zustand"
 
 type StoreData = {
@@ -12,7 +12,8 @@ type StoreData = {
 }
 
 export const store = create<StoreData>(set => ({
-  updateStore: newState => set(prev => (typeof newState === "function" ? { ...prev, ...newState(prev) } : { ...prev, ...newState })),
+  updateStore: newState =>
+    set(prev => (typeof newState === "function" ? { ...prev, ...newState(prev) } : { ...prev, ...newState })),
 }))
 
 export const updateStore = store.getState().updateStore

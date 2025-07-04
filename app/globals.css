@@ -1,16 +1,7 @@
 @import "tailwindcss";
 
-/* @font-face {
-  font-family: "8bitoperator JVE";
-  src: url("/fonts/8bitoperator-JVE.woff2") format("woff2"), url("/fonts/8bitoperator-JVE.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
-
 @theme {
   --accent: oklch(0 0 0);
-  /* --8bit: "8bitoperator JVE", serif; */
 }
 
 @layer base {
@@ -19,9 +10,8 @@
   }
 
   body {
-    @apply h-screen bg-black;
-    @apply font-medium text-white;
-    @apply font-(family-name:--inter);
+    @apply font-medium text-black;
+    @apply font-(family-name:--firamono);
   }
 
   h1 {
@@ -33,7 +23,7 @@
   }
 
   button {
-    @apply bg-white text-black px-3 py-1 pb-1.5 cursor-pointer rounded-lg;
+    @apply cursor-pointer;
   }
 
   input[type="text"] {
