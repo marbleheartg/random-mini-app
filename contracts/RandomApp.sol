@@ -6,7 +6,7 @@ import { ERC1155 } from "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract RandomApp is ERC1155, Ownable {
-    uint256 public constant PRICE = 0.00009 ether;
+    uint256 public constant PRICE = 0.0000843 ether;
 
     constructor(address initialOwner) ERC1155("ipfs://bafybeiahp3ruxnsdab6sbgl6fzzxlmhwtp2mcd2hjkdgdpmmsgja57sgge/{id}.json") Ownable(initialOwner) {}
 
