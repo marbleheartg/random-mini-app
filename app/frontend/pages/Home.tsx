@@ -128,7 +128,7 @@ export default function Home() {
       <div className="flex flex-1">
         <div
           className={clsx(
-            "flex justify-center aspect-[2/1] w-1/2 border-r overflow-hidden pointer-events-none",
+            "flex justify-center aspect-[3/2] w-1/2 border-r overflow-hidden pointer-events-none",
             (!screenshot_urls?.length || screenshotsFailed) && "justify-center items-center text-sm",
           )}
         >
@@ -150,7 +150,7 @@ export default function Home() {
         </div>
 
         <div
-          className={clsx("flex justify-center items-center aspect-[2/1] w-1/2 cursor-pointer", "text-2xl")}
+          className={clsx("flex justify-center items-center aspect-[3/2] w-1/2 cursor-pointer", "text-2xl")}
           onClick={() => {
             try {
               connect({ connector: connectors[0] })
