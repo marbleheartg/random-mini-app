@@ -8,10 +8,15 @@ import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 contract RandomApp is ERC1155, Ownable {
     uint256 public constant PRICE = 0.00009 ether;
 
-    constructor(address initialOwner) ERC1155("ipfs://bafybeih7ht4erytz652leowkw25k5uksdevmo6jhp4azygdqnwi5mbkraa/{id}.json") Ownable(initialOwner) {}
+    constructor(address initialOwner) ERC1155("ipfs://bafybeiahp3ruxnsdab6sbgl6fzzxlmhwtp2mcd2hjkdgdpmmsgja57sgge/{id}.json") Ownable(initialOwner) {}
 
-    function mint(uint256 id) public payable {
+    function mint(uint256 id, address builder) public payable {
         require(msg.value >= PRICE, "Not enough ETH...");
+
+        uint256 half = msg.value / 2;
+        payable(builder).transfer(half);
+        payable(owner()).transfer(half);
+
         _mint(msg.sender, id, 1, "");
     }
 
