@@ -1,4 +1,5 @@
 import { MiniAppHostCapability } from "@farcaster/frame-node"
+// @ts-ignore
 import { ClientContext, UserContext } from "@farcaster/miniapp-core/dist/context"
 import { create } from "zustand"
 

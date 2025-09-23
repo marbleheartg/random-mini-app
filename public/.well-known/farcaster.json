@@ -4,7 +4,7 @@
     "payload": "eyJkb21haW4iOiJyYW5kb21hcHAuZnVuIn0",
     "signature": "MHgwMTcyNTYwMTZhMTIyNGM5ZWRjNzBkNTNmOGE2ZGYwMGIzOGY4Njk5YzhhNjU1ZGUyYWE2OWYyNmU4YzhjY2Y0N2UxYmJhZDVkMGY0MWU5OGI2YzRmNGVhZjRmYzZhZjZjODYzNzc5N2MyYjBjODRiYzM4ZjMxM2ZmNTIwM2ZiNzFj"
   },
-  "frame": {
+  "miniapp": {
     "version": "1",
     "name": "random",
     "iconUrl": "https://randomapp.fun/images/og/manifest/icon.gif",
@@ -26,5 +26,8 @@
     "requiredChains": [],
     "requiredCapabilities": [],
     "tags": ["random", "app", "mini-app", "social", "build"]
+  },
+  "baseBuilder": {
+    "allowedAddresses": ["0xf1f2D5C38174B0df9C9eABc909d812540a9bb51B"]
   }
 }
